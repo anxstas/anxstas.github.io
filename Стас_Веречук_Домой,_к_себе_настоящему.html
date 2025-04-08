@@ -1,0 +1,1199 @@
+<html lang="ru"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стас Веречук - Домой, к себе настоящему</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background: linear-gradient(to bottom, #e9f6f4, #ffffff);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #6ba59a 0%, #8fc0b7 50%, #a6d0c4 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #6ba59a 0%, #8fc0b7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-light {
+            background: linear-gradient(135deg, #d1e6e1 0%, #e9f6f4 50%, #f7fdfc 100%);
+        }
+
+        .gradient-button {
+            background: linear-gradient(90deg, #6ba59a 0%, #8fc0b7 100%);
+            transition: all 0.3s ease;
+        }
+
+        .gradient-button:hover {
+            background: linear-gradient(90deg, #5a958a 0%, #7dafa6 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(107, 165, 154, 0.3);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(107, 165, 154, 0.15);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, #6ba59a 0%, #8fc0b7 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        input, textarea {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #6ba59a;
+            box-shadow: 0 0 0 2px rgba(107, 165, 154, 0.1);
+            outline: none;
+        }
+
+        .wave-pattern {
+            position: absolute;
+            width: 100%;
+            height: 150px;
+            background-image: url('https://i.imgur.com/l1RdCsp.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #6ba59a;
+        }
+        
+        .profile-pic {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .profile-pic:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .header-photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #6ba59a;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .accordion-header {
+            cursor: pointer;
+            padding: 1rem;
+            font-weight: 600;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1rem;
+        }
+
+        .accordion-content.active {
+            max-height: 500px;
+            padding: 1rem;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-icon.active {
+            transform: rotate(180deg);
+        }
+        
+        .circular-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #6ba59a;
+            box-shadow: 0 5px 15px rgba(107, 165, 154, 0.3);
+        }
+        
+        .free-resource-card {
+            transition: all 0.3s ease;
+        }
+        
+        .free-resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(107, 165, 154, 0.2);
+        }
+        
+        .about-profile-pic {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #6ba59a;
+            box-shadow: 0 5px 15px rgba(107, 165, 154, 0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .service-card, .testimonial-card, .free-resource-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            section {
+                padding-top: 2.5rem;
+                padding-bottom: 2.5rem;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            h2 {
+                margin-bottom: 2rem;
+            }
+            
+            .about-profile-pic {
+                width: 180px;
+                height: 180px;
+            }
+        }
+        .gu_btn{
+            z-index: 999;
+        }
+        .aboty_gu_left{
+            padding-left: 50px;
+            padding-right: 0;
+        }
+        .gu_h_svg svg{
+            scale: 1.19;
+        }
+        .tac{
+            margin: 0 auto 20px;
+        }
+        .tеxt_facebook{
+            --tw-text-opacity: 1;
+            color: rgb(1 155 229);
+        }     
+        .tеxt_telegram{
+            --tw-text-opacity: 1;
+            color: rgb(43 181 245)
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="w-full sticky top-0 z-50 shadow-md bg-white bg-opacity-90 backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://gensparkpublicblob.blob.core.windows.net/user-upload-image/v1/base64_upload/6d1b7ac40055590a1a0e890e90f33399" alt="Стас Веречук" class="header-photo">
+                <div>
+                    <h1 class="text-2xl font-bold gradient-text">Стас Веречук</h1>
+                    <p class="text-sm text-gray-600">Терапевт тревоги и депрессии</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-700 hover:text-teal-600 font-medium">Главная</a>
+                <a href="#approach" class="nav-link text-gray-700 hover:text-teal-600 font-medium">Мой подход</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-teal-600 font-medium">Обо мне</a>
+                <a href="#services" class="nav-link text-gray-700 hover:text-teal-600 font-medium">Форматы работы</a>
+                <a href="#testimonials" class="nav-link text-gray-700 hover:text-teal-600 font-medium">Отзывы</a>
+                <a href="#resources" class="nav-link text-gray-700 hover:text-teal-600 font-medium">Бесплатные ресурсы</a>
+                <!-- <a href="#contact" class="nav-link text-gray-700 hover:text-teal-600 font-medium">Контакты</a> -->
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-teal-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="flex flex-col px-4 py-2 space-y-3">
+                <a href="#home" class="text-gray-700 hover:text-teal-600 font-medium">Главная</a>
+                <a href="#approach" class="text-gray-700 hover:text-teal-600 font-medium">Мой подход</a>
+                <a href="#about" class="text-gray-700 hover:text-teal-600 font-medium">Обо мне</a>
+                <a href="#services" class="text-gray-700 hover:text-teal-600 font-medium">Форматы работы</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-teal-600 font-medium">Отзывы</a>
+                <a href="#resources" class="text-gray-700 hover:text-teal-600 font-medium">Бесплатные ресурсы</a>
+               <!--  <a href="#contact" class="text-gray-700 hover:text-teal-600 font-medium">Контакты</a> -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-16 pb-32 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                        Домой, к себе настоящему
+                        <span class="block text-2xl md:text-3xl mt-2 text-teal-600">Путь к своей аутентичности</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-8">
+                        Я помогаю людям с тревогой и депрессией вернуться к себе настоящим. Моя задача — не уничтожить тревогу, а помочь вам трансформировать её энергию в направлении ваших истинных ценностей.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="https://t.me/anxstas" class="gu_btn gradient-button text-white font-semibold py-3 px-8 rounded-full text-center">Жми. Я жду тебя</a>
+                        <a href="https://instagram.com/verechuk_/" class="gu_btn border-2 border-teal-500 text-teal-600 font-semibold py-3 px-8 rounded-full text-center hover:bg-teal-50 transition duration-300">Узнать больше</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:justify-end">
+                    <div class="relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full blur-md opacity-70"></div>
+                        <img src="https://gensparkpublicblob.blob.core.windows.net/user-upload-image/v1/base64_upload/6d1b7ac40055590a1a0e890e90f33399" alt="Стас Веречук" class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-xl border-4 border-white">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0" style="z-index: -9;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#e9f6f4" fill-opacity="1" d="M0,224L48,208C96,192,192,160,288,165.3C384,171,480,213,576,208C672,203,768,149,864,144C960,139,1056,181,1152,186.7C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section id="approach" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Основные принципы моего подхода</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Principle 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Взросление</h3>
+                    <p class="text-gray-600 text-center">
+                        Тревога и депрессия — части естественного пути взросления. Взросление включает встречу с экзистенциальными данностями и принятие ответственности за свой выбор.
+                    </p>
+                </div>
+                
+                <!-- Principle 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Ценности</h3>
+                    <p class="text-gray-600 text-center">
+                        Тревога и депрессия возникают при отчуждении от собственных ценностей. Возвращение к аутентичным ценностям — ключ к психологическому благополучию.
+                    </p>
+                </div>
+                
+                <!-- Principle 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Доверие</h3>
+                    <p class="text-gray-600 text-center">
+                        Доверие к себе, другим и миру — фундамент психологического здоровья. Человек, который доверяет, меньше тревожится и способен принимать жизнь во всех её проявлениях.
+                    </p>
+                </div>
+                
+                <!-- Principle 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Принятие</h3>
+                    <p class="text-gray-600 text-center">
+                        Принятие — не пассивная капитуляция, а активная позиция открытости к опыту. Принятие себя, других и мира такими, какие они есть, освобождает от тревоги.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold mb-4 text-teal-700">Научная обоснованность подхода</h3>
+                <p class="text-gray-700 mb-4">
+                    Мой подход интегрирует научно обоснованные концепции и методы из различных направлений психотерапии:
+                </p>
+                <ul class="space-y-2">
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-700"><strong>Концепция "Окна толерантности"</strong> (Дэн Сигел) — научно подтвержденная модель регуляции эмоциональных состояний.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-700"><strong>Теория самодетерминации</strong> (Деси и Райан) — обширная эмпирическая база исследований благополучия.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-700"><strong>Гештальт-терапия</strong> — мета-анализы подтверждают эффективность гештальта при тревожных расстройствах и депрессии, с результатами, сравнимыми с когнитивно-поведенческой терапией.</span>
+                    </li>
+                </ul>
+                
+                <p class="mt-4 text-gray-700">
+                    В своей работе я интегрирую гештальт-терапию, экзистенциальный подход, техники когнитивно-поведенческой терапии, телесно-ориентированные практики и психоделически ассистированную терапию.
+                </p>
+                <p class="mt-4 text-gray-700">
+                    <strong>90% клиентов отмечают значительное улучшение качества жизни уже после 2 месяцев терапии</strong>, включая снижение тревоги, улучшение сна и более осознанное взаимодействие с собой и миром.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16 gradient-text">Как я помогаю</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Тревога — не враг</h3>
+                    <p class="text-gray-600 text-center">
+                        Я помогаю увидеть тревогу не как врага, а как сигнал от психики о том, что вы отдалились от своих ценностей и аутентичного пути.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Возвращение к аутентичности</h3>
+                    <p class="text-gray-600 text-center">
+                        Вместе мы работаем над восстановлением контакта с вашими истинными ценностями и возвращаем чувство авторства в вашей жизни.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-4">Интегративный подход</h3>
+                    <p class="text-gray-600 text-center">
+                        Я использую сочетание экзистенциальной, телесно-ориентированной, гештальт-терапии и когнитивно-поведенческих техник для целостной работы.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <!-- <section id="about" class="py-16 gradient-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-6 gradient-text text-center">Обо мне</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-16 mb-10 md:mb-0 aboty_gu_left">
+                  
+                    <div class="flex justify-center mb-6">
+                        <div class="relative">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full blur-md opacity-70"></div>
+                            <img src="https://gensparkpublicblob.blob.core.windows.net/user-upload-image/v1/base64_upload/ef608e7a6f3e3147cbbf046d747fcdd9" alt="Стас Веречук в Бали" class="about-profile-pic relative">
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        Я — Стас Веречук, мне 46 лет, я психотерапевт с 13-летним опытом в саморазвитии и практике. Мой путь начался с личного опыта преодоления генерализованного тревожного и тревожно-депрессивного расстройств, что дало мне глубокое понимание этих состояний изнутри.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        С 2013 года практикую йогу и работаю с дыхательными практиками. В 2017 году начал свой путь в психотерапии, сначала как клиент, а затем как психотерапевт в гештальт-подходе. С 2024 года я также практикую психоделически ассистированную терапию.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        В своей работе я интегрирую гештальт-терапию, экзистенциальный подход, техники когнитивно-поведенческой терапии, телесно-ориентированные практики и психоделически ассистированную терапию. Моя миссия — помочь вам вернуться к себе настоящему, трансформировать тревогу из врага в ресурс и обрести внутреннюю свободу.
+                    </p>
+                    <a href="https://t.me/anxstas" class="gradient-button inline-block text-white font-semibold py-3 px-8 rounded-full">Жми. Я жду тебя</a>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative z-10 w-full max-w-md mt-8">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 via-cyan-500 to-teal-400 rounded-xl blur-md opacity-70"></div>
+                        <div class="relative bg-white p-6 rounded-xl shadow-xl">
+                            <h3 class="text-2xl font-bold text-teal-700 mb-4">Мой подход</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Я не "чиню" и не "спасаю" — я рядом с вами на вашем пути</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Помогаю трансформировать тревожную энергию в ценностно-ориентированные действия</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Работаю с телом и дыханием как ключом к эмоциональным состояниям</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Создаю безопасное пространство для раскрытия подлинной самости</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Помогаю развить доверие к себе, другим и процессу жизни</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    
+    <section id="about" class="py-16 gradient-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-6 gradient-text text-left">Обо мне</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-16">
+                <!-- Ліва частина з фото (на великих екранах ліворуч) -->
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full blur-md opacity-70"></div>
+                        <img src="https://gensparkpublicblob.blob.core.windows.net/user-upload-image/v1/base64_upload/ef608e7a6f3e3147cbbf046d747fcdd9" alt="Стас Веречук в Бали" class="about-profile-pic relative rounded-full shadow-lg w-64 h-64 object-cover">
+                    </div>
+                </div>
+    
+                <!-- Права частина з текстом (на великих екранах праворуч) -->
+                <div class="md:w-2/3 text-center md:text-left">
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        Я — Стас Веречук, мне 46 лет, я психотерапевт с 13-летним опытом в саморазвитии и практике. Мой путь начался с личного опыта преодоления генерализованного тревожного и тревожно-депрессивного расстройств, что дало мне глубокое понимание этих состояний изнутри.
+                    </p>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        С 2013 года практикую йогу и работаю с дыхательными практиками. В 2017 году начал свой путь в психотерапии, сначала как клиент, а затем как психотерапевт в гештальт-подходе. С 2024 года я также практикую психоделически ассистированную терапию.
+                    </p>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        В своей работе я интегрирую гештальт-терапию, экзистенциальный подход, техники когнитивно-поведенческой терапии, телесно-ориентированные практики и психоделически ассистированную терапию. Моя миссия — помочь вам вернуться к себе настоящему, трансформировать тревогу из врага в ресурс и обрести внутреннюю свободу.
+                    </p>
+                    <a href="https://t.me/anxstas" class="gradient-button inline-block text-white font-semibold py-3 px-8 rounded-full">Жми. Я жду тебя</a>
+                </div>
+            </div>
+    
+            <div class="flex flex-col md:flex-row items-center mt-16">
+                <!-- Мой подход блок -->
+                <div class=" flex justify-center" style="    margin: 0 auto;">
+                    <div class="relative z-10 w-full ">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 via-cyan-500 to-teal-400 rounded-xl blur-md opacity-70"></div>
+                        <div class="relative bg-white p-6 rounded-xl shadow-xl">
+                            <h3 class="text-2xl font-bold text-teal-700 mb-4">Мой подход</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Я не "чиню" и не "спасаю" — я рядом с вами на вашем пути</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Помогаю трансформировать тревожную энергию в ценностно-ориентированные действия</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Работаю с телом и дыханием как ключом к эмоциональным состояниям</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Создаю безопасное пространство для раскрытия подлинной самости</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Помогаю развить доверие к себе, другим и процессу жизни</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- My Guarantee Section (Standalone) -->
+    <section class="py-10 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gradient-to-r from-teal-50 to-cyan-50 p-8 rounded-xl shadow-lg border-l-4 border-teal-500">
+                <h2 class="text-3xl font-bold mb-6 gradient-text text-center">Моя гарантия</h2>
+                <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                    Я искренне верю в эффективность своего подхода и в возможность каждого человека вернуться к своей подлинной природе. Поэтому я предлагаю вам не просто терапию, а настоящее партнерство на пути к изменениям:
+                </p>
+                <div class="bg-white p-6 rounded-lg shadow-md mb-6 border-l-4 border-teal-500">
+                    <p class="text-teal-800 font-medium text-xl">
+                        Если после первого месяца работы вы не почувствуете положительных изменений и улучшений в качестве жизни, я верну вам 100% оплаты — без лишних вопросов и объяснений.
+                    </p>
+                </div>
+                <p class="text-gray-700 text-lg">
+                    Эта гарантия — не просто маркетинговый ход, а выражение моей уверенности в нашей совместной работе и моей ответственности за ваш путь к себе настоящему. Вы не рискуете ничем, кроме возможности начать жить полной жизнью.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Форматы работы</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-50 p-8 shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">Сессия-знакомство</h3>
+                    <p class="text-gray-500 text-center text-sm mb-4">60 минут / 30€ (скидка 40%)</p>
+                    <p class="text-gray-700 text-center mb-6">
+                        Первый шаг для знакомства с моим подходом и определения оптимального формата дальнейшей работы.
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Первичная диагностика состояния</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Знакомство с моим подходом</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Определение оптимального формата работы</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://t.me/anxstas" class="gradient-button inline-block text-white font-semibold py-3 px-6 rounded-full w-full">Жми. Я жду тебя</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-50 p-8 shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">Выход из петли тревоги</h3>
+                    <p class="text-gray-500 text-center text-sm mb-4">6 недель / 6 сессий по 60 мин / 300€</p>
+                    <p class="text-gray-700 text-center mb-6">
+                        Структурированная программа для быстрого получения инструментов работы с тревогой и начала трансформации.
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Освоение базовых техник саморегуляции</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Работа с мыслительными паттернами</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Перенаправление тревожной энергии</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Практика Живого дыхания</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-teal-50 p-3 rounded-lg mb-6">
+                        <p class="text-teal-800 text-sm text-center">
+                            <strong>Для кого:</strong> Для людей с умеренной тревогой, готовых к активной краткосрочной работе и быстрым результатам.
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://t.me/anxstas" class="gradient-button inline-block text-white font-semibold py-3 px-6 rounded-full w-full">Жми. Я жду тебя</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-50 p-8 shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">Свет во тьме: выход из депрессии</h3>
+                    <p class="text-gray-500 text-center text-sm mb-4">12 недель / 12 сессий по 60 мин / 600€</p>
+                    <p class="text-gray-700 text-center mb-6">
+                        Глубинная программа для тех, кто хочет выбраться из депрессии и вернуть радость жизни.
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Восстановление витальности через работу с телом</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Возвращение к подлинным ценностям</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Создание опыта самоэффективности</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Поиск и развитие источников смысла</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-teal-50 p-3 rounded-lg mb-6">
+                        <p class="text-teal-800 text-sm text-center">
+                            <strong>Для кого:</strong> Для людей в состоянии депрессии, которые готовы к систематической работе по возвращению радости и смысла в жизнь.
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://t.me/anxstas" class="gradient-button inline-block text-white font-semibold py-3 px-6 rounded-full w-full">Жми. Я жду тебя</a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-gray-50 p-8 shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">Домой, к себе настоящему</h3>
+                    <p class="text-gray-500 text-center text-sm mb-4">Глубинная длительная терапия / 100€ за 120 мин сессию</p>
+                    <p class="text-gray-700 text-center mb-6">
+                        Глубинная трансформация через возвращение к подлинности и аутентичным ценностям.
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Глубинная работа с причинами тревоги и депрессии</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Трансформация базовых паттернов</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Развитие доверия к себе и миру</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Путь взросления и принятия мира</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-teal-50 p-3 rounded-lg mb-6">
+                        <p class="text-teal-800 text-sm text-center">
+                            <strong>Для кого:</strong> Для людей, готовых к глубинной работе и долгосрочным изменениям, стремящихся к подлинной трансформации и осознанности.
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://t.me/anxstas" class="gradient-button inline-block text-white font-semibold py-3 px-6 rounded-full w-full">Жми. Я жду тебя</a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card bg-gray-50 p-8 shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">Телеграм для тревожных друзей</h3>
+                    <p class="text-gray-500 text-center text-sm mb-4">Постоянная поддержка / 30€ в месяц</p>
+                    <p class="text-gray-700 text-center mb-6">
+                        Доступ к закрытой группе в Telegram с регулярной поддержкой и дополнительными материалами.
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Регулярные тематические материалы</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Поддержка сообщества единомышленников</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Групповые онлайн-встречи</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Возможность задать мне вопросы</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-teal-50 p-3 rounded-lg mb-6">
+                        <p class="text-teal-800 text-sm text-center">
+                            <strong>Для кого:</strong> Для клиентов, прошедших индивидуальные программы и желающих получать постоянную поддержку сообщества и доступ к дополнительным материалам.
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://t.me/+eWQ8eDLbZ5ZhMWJi" class="gradient-button inline-block text-white font-semibold py-3 px-6 rounded-full w-full">Присоединиться</a>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card bg-gray-50 p-8 shadow-lg">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">Онлайн курс "Живое дыхание"</h3>
+                    <p class="text-gray-500 text-center text-sm mb-4">Самостоятельное обучение / 99€</p>
+                    <p class="text-gray-700 text-center mb-6">
+                        Онлайн курс по освоению моей авторской техники дыхания для работы с тревогой и стрессом.
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Видеоуроки с пошаговым обучением</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Практические упражнения</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Доступ к курсу навсегда</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-gray-700 text-sm">Поддержка в чате с другими учениками</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-teal-50 p-3 rounded-lg mb-6">
+                        <p class="text-teal-800 text-sm text-center">
+                            <strong>Для кого:</strong> Для тех, кто предпочитает самостоятельное обучение или хочет дополнить индивидуальную работу освоением конкретных дыхательных техник.
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://t.me/anxstas" class="gradient-button inline-block text-white font-semibold py-3 px-6 rounded-full w-full">Жми. Я жду тебя</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16 gradient-text">Отзывы клиентов</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center">
+                                <span class="text-teal-700 font-bold text-lg">А</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Анна</h4>
+                            <div class="flex text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Теперь я не просто существую — я живу. Стас помог мне вернуться к жизни, когда я была уверена, что у меня нет будущего. Меня накрывала депрессия, тревожность буквально парализовала. Теперь я знаю, что делать, если вдруг накатывает тревога!"
+                    </p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center">
+                                <span class="text-teal-700 font-bold text-lg">М</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Михаил</h4>
+                            <div class="flex text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Я вообще не ожидал, что за 5 встреч можно достичь хоть какого-то результата. По ощущениям, моя тревога снизилась минимум наполовину. Ощущение, что я снова управляю собой, а не просто трясусь в страхе. Спасибо тебе, Стас!"
+                    </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center">
+                                <span class="text-teal-700 font-bold text-lg">Е</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Екатерина</h4>
+                            <div class="flex text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Моя тревога стала реально слабее. Если раньше она просто сжирала меня с утра до вечера, то теперь я иногда смотрю... а её нет! Как рюкзак с плеч. Тяжеленный. Причём тот, который я даже не знала, что таскаю."
+                    </p>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center">
+                                <span class="text-teal-700 font-bold text-lg">Д</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Дмитрий</h4>
+                            <div class="flex text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Стас, ты был прав, тревога — это про взросление. Я не мог уменьшить свою тревогу, не повзрослев. Ты помог мне найти мою смелость. Теперь я иду, несмотря на страхи, и постепенно чувствую, что я могу."
+                    </p>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center">
+                                <span class="text-teal-700 font-bold text-lg">О</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Ольга</h4>
+                            <div class="flex text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Спасибо тебе, тонкий и чувственный человек, что научил меня относиться к тревоге иначе. Своим примером. И своей душой. Возможно, это самое важное из всего, что я узнала за последние годы."
+                    </p>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center">
+                                <span class="text-teal-700 font-bold text-lg">С</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Сергей</h4>
+                            <div class="flex text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Стас, мне кажется, ты хакнул мою депрессию! Это мой самый яркий опыт за всю мою жизнь. Спасибо, что показал мне, что значит жить. Теперь утро — это не «ох, как бы дожить до вечера», а «чего бы такого офигенного сегодня сделать?»"
+                    </p>
+                </div>
+            </div>
+            <div class="mt-10 text-center">
+                <a href="https://www.instagram.com/stasverechuk_feedback?igsh=ZzJtcWRvaWYwbzMy&amp;utm_source=qr" class="gradient-button inline-block text-white font-semibold py-3 px-8 rounded-full">Больше отзывов клиентов</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Free Resources Section -->
+    <section id="resources" class="py-16 gradient-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16 gradient-text">Бесплатные ресурсы</h2>
+            <p class="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
+                Для тех, кто пока не готов к платному формату, я подготовил полезные материалы в моих социальных сетях:
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- YouTube -->
+                <div class="free-resource-card bg-white p-6 rounded-xl shadow-lg flex flex-col h-full">
+                    <div class="w-16 h-16 tac">
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 72 72">
+
+                            <g fill="none" fill-rule="evenodd">
+                            
+                            <path d="M36,72 L36,72 C55.882251,72 72,55.882251 72,36 L72,36 C72,16.117749 55.882251,-3.65231026e-15 36,0 L36,0 C16.117749,3.65231026e-15 -2.4348735e-15,16.117749 0,36 L0,36 C2.4348735e-15,55.882251 16.117749,72 36,72 Z" fill="#FF0002"/>
+                            
+                            <path d="M31.044,42.269916 L31.0425,28.6877416 L44.0115,35.5022437 L31.044,42.269916 Z M59.52,26.3341627 C59.52,26.3341627 59.0505,23.003199 57.612,21.5363665 C55.7865,19.610299 53.7405,19.6012352 52.803,19.4894477 C46.086,19 36.0105,19 36.0105,19 L35.9895,19 C35.9895,19 25.914,19 19.197,19.4894477 C18.258,19.6012352 16.2135,19.610299 14.3865,21.5363665 C12.948,23.003199 12.48,26.3341627 12.48,26.3341627 C12.48,26.3341627 12,30.2467232 12,34.1577731 L12,37.8256098 C12,41.7381703 12.48,45.6492202 12.48,45.6492202 C12.48,45.6492202 12.948,48.9801839 14.3865,50.4470165 C16.2135,52.3730839 18.612,52.3126583 19.68,52.5135736 C23.52,52.8851913 36,53 36,53 C36,53 46.086,52.9848936 52.803,52.4954459 C53.7405,52.3821478 55.7865,52.3730839 57.612,50.4470165 C59.0505,48.9801839 59.52,45.6492202 59.52,45.6492202 C59.52,45.6492202 60,41.7381703 60,37.8256098 L60,34.1577731 C60,30.2467232 59.52,26.3341627 59.52,26.3341627 L59.52,26.3341627 Z" fill="#FFF"/>
+                            
+                            </g>
+                            
+                            </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">YouTube</h3>
+                    <p class="text-gray-600 text-center flex-grow mb-4">
+                        Исследую темы тревожности и депрессии с разных сторон, делюсь практическими советами и техниками. На канале вы найдете видео о методах работы с тревогой, упражнения и размышления о природе эмоциональных состояний.
+                    </p>
+                    <div class="text-center">
+                        <a href="https://www.youtube.com/@anxstas/" class="text-red-500 font-semibold hover:text-red-600 transition flex items-center justify-center" target="_blank">
+                            Смотреть
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Instagram -->
+                <div class="free-resource-card bg-white p-6 rounded-xl shadow-lg flex flex-col h-full">
+                    <div class="w-16 h-16 tac">
+                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 1024 1024" viewBox="0 0 1024 1024"><circle cx="512" cy="512" fill="#e4405f" r="512"/><path d="m512 256c-69.5 0-78.2.3-105.5 1.5-27.3 1.3-45.8 5.6-62.1 11.9-16.8 6.5-31.1 15.3-45.4 29.5s-23 28.5-29.5 45.4c-6.3 16.3-10.6 34.9-11.9 62.1-1.3 27.3-1.5 36-1.5 105.5s.3 78.2 1.5 105.5c1.3 27.2 5.6 45.8 11.9 62.1 6.5 16.8 15.3 31.1 29.5 45.4 14.2 14.2 28.5 23 45.4 29.5 16.3 6.3 34.9 10.6 62.1 11.9 27.3 1.3 36 1.5 105.5 1.5s78.2-.3 105.5-1.5c27.2-1.3 45.8-5.6 62.1-11.9 16.8-6.5 31.1-15.3 45.4-29.5 14.2-14.2 23-28.5 29.5-45.4 6.3-16.3 10.6-34.9 11.9-62.1 1.3-27.3 1.5-36 1.5-105.5s-.3-78.2-1.5-105.5c-1.3-27.2-5.6-45.8-11.9-62.1-6.5-16.8-15.3-31.1-29.5-45.4-14.2-14.2-28.5-23-45.4-29.5-16.3-6.3-34.9-10.6-62.1-11.9-27.3-1.2-36-1.5-105.5-1.5zm0 46.1c68.3 0 76.5.3 103.5 1.5 25 1.2 38.5 5.3 47.5 8.9 12 4.6 20.5 10.2 29.5 19.1 8.9 9 14.5 17.5 19.1 29.5 3.5 9 7.7 22.5 8.8 47.5 1.2 27 1.5 35.1 1.5 103.5s-.3 76.5-1.6 103.5c-1.3 25-5.5 38.5-9 47.5-4.8 12-10.2 20.5-19.2 29.5-8.9 8.9-17.6 14.5-29.4 19.1-9 3.5-22.7 7.7-47.7 8.8-27.2 1.2-35.2 1.5-103.7 1.5s-76.5-.3-103.7-1.6c-25-1.3-38.7-5.5-47.7-9-12.1-4.8-20.5-10.2-29.4-19.2-9-8.9-14.7-17.6-19.2-29.4-3.5-9-7.7-22.7-9-47.7-1-26.9-1.3-35.2-1.3-103.3 0-68.2.3-76.5 1.3-103.7 1.3-25 5.4-38.7 9-47.7 4.5-12.2 10.2-20.5 19.2-29.5 8.9-8.9 17.3-14.7 29.4-19.2 9-3.5 22.4-7.7 47.4-9 27.2-1 35.2-1.3 103.7-1.3zm0 78.4c-72.6 0-131.5 58.9-131.5 131.5s58.9 131.5 131.5 131.5 131.5-58.9 131.5-131.5-58.9-131.5-131.5-131.5zm0 216.8c-47.1 0-85.3-38.2-85.3-85.3s38.2-85.3 85.3-85.3 85.3 38.2 85.3 85.3-38.2 85.3-85.3 85.3zm167.4-221.9c0 17-13.8 30.7-30.7 30.7-17 0-30.7-13.8-30.7-30.7s13.8-30.7 30.7-30.7c16.9-.1 30.7 13.7 30.7 30.7z" fill="#fff"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Instagram</h3>
+                    <p class="text-gray-600 text-center flex-grow mb-4">
+                        Публикую советы, мысли и техники на тему преодоления тревожности и депрессии, а также делюсь личным опытом. В Instagram вы найдете короткие полезные посты, истории о моей работе и ценные инсайты для ежедневной практики.
+                    </p>
+                    <div class="text-center">
+                        <a href="https://instagram.com/verechuk_/" class="text-pink-500 font-semibold hover:text-pink-600 transition flex items-center justify-center" target="_blank">
+                            Подписаться
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Telegram -->
+                <div class="free-resource-card bg-white p-6 rounded-xl shadow-lg flex flex-col h-full">
+                    <div class="w-16 h-16 gu_h_svg tac">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  viewBox="0 0 48 48">
+                            <path fill="#29b6f6" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"></path><path fill="#fff" d="M33.95,15l-3.746,19.126c0,0-0.161,0.874-1.245,0.874c-0.576,0-0.873-0.274-0.873-0.274l-8.114-6.733 l-3.97-2.001l-5.095-1.355c0,0-0.907-0.262-0.907-1.012c0-0.625,0.933-0.923,0.933-0.923l21.316-8.468 c-0.001-0.001,0.651-0.235,1.126-0.234C33.667,14,34,14.125,34,14.5C34,14.75,33.95,15,33.95,15z"></path><path fill="#b0bec5" d="M23,30.505l-3.426,3.374c0,0-0.149,0.115-0.348,0.12c-0.069,0.002-0.143-0.009-0.219-0.043 l0.964-5.965L23,30.505z"></path><path fill="#cfd8dc" d="M29.897,18.196c-0.169-0.22-0.481-0.26-0.701-0.093L16,26c0,0,2.106,5.892,2.427,6.912 c0.322,1.021,0.58,1.045,0.58,1.045l0.964-5.965l9.832-9.096C30.023,18.729,30.064,18.416,29.897,18.196z"></path>
+                            </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Telegram</h3>
+                    <p class="text-gray-600 text-center flex-grow mb-4">
+                        В Telegram я делюсь лекциями, сессиями и практиками по тревоге и депрессии. Там вы найдете образовательный контент, глубинные разборы и поддерживающие материалы для личной работы и осознанной жизни.
+                    </p>
+                    <div class="text-center">
+                        <a href="https://t.me/domminside" class="tеxt_telegram font-semibold hover:text-pink-600 transition flex items-center justify-center" target="_blank">
+                            Подписаться
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="free-resource-card bg-white p-6 rounded-xl shadow-lg flex flex-col h-full">
+                    <div class="w-16 h-16 gu_h_svg tac" >
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  viewBox="0 0 48 48">
+                            <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
+                            </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Facebook</h3>
+                    <p class="text-gray-600 text-center flex-grow mb-4">
+                        Здесь я делюсь тем, как живу свою непростую и счастливую жизнь — с тревогами, открытиями и путём к себе. Пишу откровенно, по-настоящему и про свет, и про тьму.
+                    </p>
+                    <div class="text-center">
+                        <a href="https://www.facebook.com/stanislav.verechuk" class="tеxt_facebook font-semibold hover:text-pink-600 transition flex items-center justify-center" target="_blank">
+                            Подписаться
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                        </div></div></section></body></html>
